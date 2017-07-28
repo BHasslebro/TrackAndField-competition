@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Ubuntu:700');
+
+h1, h2 {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.logoText {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 80px;
+}
+
+.toolText {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 50px;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 90px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}

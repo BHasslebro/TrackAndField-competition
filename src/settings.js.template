@@ -1,0 +1,11 @@
+// Initialize Firebase
+var config = {
+  apiKey: "YOURAPIKEY",
+  authDomain: "yourdomain.firebaseapp.com",
+  databaseURL: "https://yourdb.firebaseio.com",
+  projectId: "yourproject",
+  storageBucket: "yourstorgebucket.appspot.com",
+  messagingSenderId: "yourmessagingSenderId"
+};
+
+firebase.initializeApp(config);
