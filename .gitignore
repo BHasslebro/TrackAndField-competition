@@ -17,6 +17,7 @@ yarn-debug.log*
 yarn-error.log*
 yarn.lock
 .idea
+TrackAndField-competition.iml
 
 # secrets
 /src/settings.js

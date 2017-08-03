@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { MemoryRouter } from 'react-router-dom';
 import Competitions from './Competitions';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Competitions />, div);
+  ReactDOM.render(
+    <MemoryRouter>
+        <Competitions />
+    </MemoryRouter>
+    , div);
 });
