@@ -25,7 +25,7 @@ class Competitions extends Component {
           var branchGroups = [];
           snap.forEach(function(childSnaps) {
             var branchGroup = childSnaps.val();
-            branchGroup['.key'] = childSnaps.key;
+            //branchGroup['key'] = childSnaps.key;
             branchGroups.push(branchGroup);
           });
 
@@ -40,10 +40,14 @@ class Competitions extends Component {
   render() {
     
     function BranchesList(props) {
-      const branches = props.branches; //this.props.translationKey
+      var branchesObj = props.branches; //this.props.translationKey
+      const branchesKey = branchesObj.name_sv;
+      delete branchesObj.name_sv;
+      const branches = Object.values(branchesObj);
+
       const listBranches = branches.map((branch) => 
-        <Col key={branch.key}>
-          <Branchcard branch={branch.name}/>
+        <Col key={branchesKey + branch.name}>
+          <Branchcard branch={branch.name} branchTitle={branch.name_sv} />
         </Col>
       );    
       return (<Row>{listBranches}</Row>);
@@ -52,13 +56,13 @@ class Competitions extends Component {
               
     const branchGroupsItems = this.state.branchGroups; 
     
-    var branchGroups = <span />;    
+    var branchGroups = <span>BranchGroups</span>;
     if (Object.keys(branchGroupsItems).length > 0) {
       branchGroups = branchGroupsItems.map((branchGroup, index) => 
         <span key={index}>
           <Row>
             <Col>
-              <h1>{branchGroup.key}</h1>
+              <h3>{branchGroup.key}</h3>
             </Col>
           </Row>    
           <BranchesList branches={branchGroup} />
@@ -76,6 +80,7 @@ class Competitions extends Component {
 
     return (
       <Container>
+        {/* CompetitionsNew */}
         <FirebaseStart/>      
         <h1>Tävlingar</h1>
         <Row>
@@ -106,6 +111,7 @@ class Competitions extends Component {
             </Form>
           </Col>
           </Row>
+          <h3>Grenar</h3>
           {branchGroups}
       </Container>
 

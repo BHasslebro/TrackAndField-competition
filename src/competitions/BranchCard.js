@@ -20,7 +20,7 @@ class BranchCard extends Component {
   }
   
   render() {
-    var branch = this.props.branch
+    const branch = this.props.branch;
     
     const cardStyle = { maxWidth: 320 };
     
